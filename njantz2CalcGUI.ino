@@ -1,13 +1,11 @@
 
 /* Nathan Jantz
  * njantz2
- * 654782946
- * Lab08
+ * Calculator GUI for touch screen
+ * 
  * 
  * Setup:
- * Setup is for 2.4" TFT touchscreen with an Arduino Mega 2560.
- * 
- * Circuit Setup:
+ * Setup is for 2.4" TFT touch screen with an Arduino Mega 2560.
  * 
  * 
  * References Used:
@@ -61,11 +59,11 @@ Adafruit_TFTLCD tft(LCD_CS, LCD_CD, LCD_WR, LCD_RD, LCD_RESET);
 
 //variables
 String symbol[5][4] = {
-  {"<", ">", "<<" "C"},
-  {"7", "8", "9" "/"},
-  {"4", "5", "6" "*"},
-  {"1", "2", "3" "-"},
-  {"0", ".", "=" "+"},
+  {"<", ">", "<<", "C"},
+  {"7", "8", "9",  "/"},
+  {"4", "5", "6",  "*"},
+  {"1", "2", "3",  "-"},
+  {"0", ".", "=",  "+"},
 };
 int X, Y;
 int Num1, Num1dec, Num2, Num2dec, 
@@ -74,6 +72,7 @@ char oper;
 boolean resultDisplay, Dec = false;
 boolean graphMenu, calcMenu = false;
 boolean mainMenu = true;
+boolean errorFlag = false;
 
 void setup(){
   Serial.begin(9600);//debugging purposes
