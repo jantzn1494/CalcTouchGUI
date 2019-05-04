@@ -1,3 +1,6 @@
+//Ebrahim Broachwala
+//Code for Uno number 1
+
 #include <LiquidCrystal.h>
 #include <SoftwareSerial.h>
 //SoftwareSerial mega2(2,3);
